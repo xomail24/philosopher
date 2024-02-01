@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/artur/Documents/School 21/philo'
+mkdir ./objects
+gcc  -I ./includes  -c ./sources/action_philosophers.c -o objects/action_philosophers.o
+gcc  -I ./includes  -c ./sources/init_philo.c -o objects/init_philo.o
+gcc  -I ./includes  -c ./sources/monitor.c -o objects/monitor.o
+gcc  -I ./includes  -c ./sources/philo_utils.c -o objects/philo_utils.o
+gcc  -I ./includes  -c ./sources/philosophers.c -o objects/philosophers.o
+gcc -Wall -Werror -Wextra -fsanitize=thread -I ./includes ./objects/action_philosophers.o ./objects/init_philo.o ./objects/monitor.o ./objects/philo_utils.o ./objects/philosophers.o -o philo
+printf "🧶 Successfully Created philo!\n"
+make: Leaving directory `/Users/artur/Documents/School 21/philo'
+ 
